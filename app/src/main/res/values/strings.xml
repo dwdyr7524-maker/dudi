@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Claude Control Center</string>
+    <string name="app_subtitle">מרכז שליטה חכם לשיחות ואוטומציה בעברית</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">בית</string>
+    <string name="nav_chat">שיחה</string>
+    <string name="nav_history">היסטוריה</string>
+    <string name="nav_tasks">משימות</string>
+    <string name="nav_automation">אוטומציה</string>
+    <string name="nav_notifications">התראות</string>
+    <string name="nav_stats">סטטיסטיקות</string>
+    <string name="nav_settings">הגדרות</string>
+
+    <!-- Connectivity -->
+    <string name="offline_banner">אין חיבור לאינטרנט כעת. בדוק את הרשת כדי לשלוח הודעות אל Claude.</string>
+
+    <!-- Chat Screen -->
+    <string name="new_chat">שיחה חדשה</string>
+    <string name="chat_input_placeholder">כתוב הודעה אל Claude…</string>
+    <string name="send_message">שלח</string>
+    <string name="claude_thinking">Claude מנסח תשובה…</string>
+    <string name="missing_api_key_banner">טרם הוגדר מפתח Anthropic API. עבור להגדרות להזנת מפתח מאובטח.</string>
+    <string name="go_to_settings">להגדרות</string>
+    <string name="empty_chat_title">שיחה חדשה עם Claude</string>
+    <string name="empty_chat_subtitle">כתיבה חופשית בעברית, באנגלית או בשילוב שתיהן. בחר נקודת פתיחה או התחל להקליד.</string>
+    <string name="copy_message">העתק</string>
+    <string name="copied_toast">הטקסט הועתק ללוח</string>
+    <string name="open_conversations">רשימת שיחות</string>
+    <string name="role_user">אתה</string>
+    <string name="role_claude">Claude</string>
+    <string name="role_auto">תזמון אוטומטי</string>
+    <string name="retry_action">נסה שוב</string>
+    <string name="tokens_format">אסימונים: %1$d קלט · %2$d פלט</string>
+
+    <!-- History Screen -->
+    <string name="history_title">היסטוריית שיחות</string>
+    <string name="search_history_hint">חפש לפי כותרת או תוכן…</string>
+    <string name="empty_history_title">אין שיחות שמורות עדיין</string>
+    <string name="empty_history_subtitle">התחל שיחה חדשה והיא תישמר כאן באופן אוטומטי.</string>
+    <string name="delete_conversation">מחק שיחה</string>
+    <string name="rename_conversation">שנה שם</string>
+    <string name="rename_dialog_title">שינוי שם שיחה</string>
+    <string name="conversation_name_label">כותרת השיחה</string>
+    <string name="save">שמור</string>
+    <string name="cancel">ביטול</string>
+    <string name="confirm">אישור</string>
+    <string name="delete_confirm_title">מחיקת שיחה</string>
+    <string name="delete_confirm_body">האם למחוק לצמיתות את השיחה וכל הודעותיה?</string>
+    <string name="messages_count_format">%1$d הודעות</string>
+
+    <!-- Automation Screen -->
+    <string name="automation_title">אוטומציה ותזמון</string>
+    <string name="automation_subtitle">תזמון מחזורי כל 5 שעות כברירת מחדל, עם חלון שעות פעילות והתראות.</string>
+    <string name="automation_enable_label">הפעלת תזמון ראשי (כל 5 שעות)</string>
+    <string name="automation_explicit_note">כבוי כברירת מחדל. מופעל רק לאחר אישור מפורש שלך.</string>
+    <string name="automation_confirm_title">אישור הפעלת אוטומציה</string>
+    <string name="automation_confirm_body">האפליקציה תבצע את ההרצה המתוזמנת לפי ההגדרות שלך. ניתן להשהות או לעצור בכל עת. להמשיך?</string>
+    <string name="automation_pause">השהה אוטומציה</string>
+    <string name="automation_resume">חדש אוטומציה</string>
+    <string name="automation_stop">עצור וכבה</string>
+    <string name="automation_prompt_label">הודעה לשליחה מתוזמנת</string>
+    <string name="automation_prompt_default">תן לי סיכום קצר וממוקד של רעיון אחד מועיל לשעות הקרובות בעברית.</string>
+    <string name="automation_run_now">הפעל בדיקה כעת</string>
+    <string name="automation_status_active">פעיל</string>
+    <string name="automation_status_paused">מושהה זמנית</string>
+    <string name="automation_status_inactive">כבוי</string>
+    <string name="automation_last_run_label">הרצה אחרונה</string>
+    <string name="automation_never_run">טרם בוצעה הרצה אוטומטית</string>
+    <string name="automation_save_prompt">שמור הגדרות תזמון</string>
+    <string name="notifications_section_title">העדפות התראות</string>
+    <string name="notify_replies_label">התראה בקבלת תשובה מ-Claude</string>
+    <string name="notify_errors_label">התראה בעת שגיאת חיבור או שרת</string>
+    <string name="grant_notification_permission">אשר הרשאת התראות</string>
+    <string name="notification_permission_granted">הרשאת התראות מאושרת</string>
+    <string name="notification_permission_missing">נדרשת הרשאת התראות להצגת תשובות ותזכורות</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">הגדרות וחיבור</string>
+    <string name="security_badge_title">אחסון מוצפן בחומרת המכשיר</string>
+    <string name="security_badge_desc">מפתח ה-API נשמר מוצפן מקומית באמצעות Android Keystore (AES-256-GCM) ואינו נשלח לשום שרת אחר.</string>
+    <string name="api_key_label">מפתח Anthropic API</string>
+    <string name="api_key_placeholder">sk-ant-api03-…</string>
+    <string name="save_api_key">שמור מפתח מאובטח</string>
+    <string name="clear_api_key">מחק מפתח</string>
+    <string name="api_key_saved_status">מפתח שמור ומוצפן (%1$s)</string>
+    <string name="api_key_not_saved">לא שמור מפתח API במכשיר</string>
+    <string name="base_url_label">כתובת שרת Anthropic (HTTPS)</string>
+    <string name="api_version_label">גרסת חיבור (anthropic-version)</string>
+    <string name="model_selection_label">בחירת מודל Claude</string>
+    <string name="custom_model_label">מזהה מודל מותאם אישית</string>
+    <string name="system_prompt_label">הנחיית מערכת (System Prompt)</string>
+    <string name="system_prompt_default">אתה Claude, עוזר חכם, מדויק ואדיב. ענה בעברית ברורה, רהוטה ומאורגנת היטב.</string>
+    <string name="max_tokens_label">מגבלת אסימונים לתשובה: %1$d</string>
+    <string name="temperature_label">רמת יצירתיות: %1$.2f</string>
+    <string name="test_connection">בדיקת חיבור</string>
+    <string name="testing_connection">בודק חיבור…</string>
+    <string name="save_connection_settings">שמור הגדרות חיבור</string>
+
+    <!-- Notifications -->
+    <string name="channel_replies_name">תשובות מ-Claude</string>
+    <string name="channel_replies_desc">התראות על תשובות חדשות המתקבלות מ-Claude</string>
+    <string name="channel_errors_name">שגיאות חיבור</string>
+    <string name="channel_errors_desc">התראות על תקלות תקשורת, אימות או מכסה</string>
+    <string name="notif_reply_title">Claude Control Center · תשובה חדשה</string>
+    <string name="notif_auto_reply_title">Claude Control Center · הרצה אוטומטית הושלמה</string>
+    <string name="notif_error_title">Claude Control Center · שגיאה בשליחה</string>
+</resources>

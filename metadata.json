@@ -1,0 +1,6 @@
+{
+  "name": "Claude Connect",
+  "description": "אפליקציית Android יוקרתית בשחור, זהב ולבן לשיחה עם Claude דרך Anthropic API, כולל שמירת היסטוריה, אחסון מוצפן של מפתח API, שליחה אוטומטית כל 5 שעות והתראות.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
