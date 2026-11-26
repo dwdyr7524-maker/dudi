@@ -1,3 +1,4 @@
+# Trigger a fresh verified NEXUS APK build.
 name: Build NEXUS from uploaded ZIP
 
 on:
