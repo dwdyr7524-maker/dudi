@@ -1,0 +1,72 @@
+name: Build NEXUS from uploaded ZIP
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'ai-nov-26-2026-12-59-00-pm.zip'
+      - '.github/workflows/build-nexus-from-zip.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract the exact uploaded NEXUS source
+        run: |
+          mkdir -p _nexus_source
+          unzip -q -o ai-nov-26-2026-12-59-00-pm.zip -d _nexus_source
+          test -f _nexus_source/settings.gradle.kts
+          test -f _nexus_source/app/src/main/AndroidManifest.xml
+          grep -q 'com.aistudio.nexuscommand.qxvkzm' _nexus_source/app/build.gradle.kts
+          grep -q 'Nexus Command' _nexus_source/app/src/main/res/values/strings.xml
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept Android SDK licenses
+        run: yes | sdkmanager --licenses > /dev/null 2>&1 || true
+
+      - name: Prepare build files
+        working-directory: _nexus_source
+        run: |
+          touch .env
+          if [ ! -f .env.example ]; then touch .env.example; fi
+          keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
+
+      - name: Build NEXUS APK
+        working-directory: _nexus_source
+        run: gradle :app:assembleDebug --no-daemon
+
+      - name: Verify APK identity
+        working-directory: _nexus_source
+        run: |
+          APK=app/build/outputs/apk/debug/app-debug.apk
+          test -s "$APK"
+          "$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -n1)/aapt" dump badging "$APK" | tee /tmp/apk-badging.txt
+          grep -q "package: name='com.aistudio.nexuscommand.qxvkzm'" /tmp/apk-badging.txt
+          grep -q "application-label:'Nexus Command'" /tmp/apk-badging.txt
+          cp "$APK" "$GITHUB_WORKSPACE/NEXUS-Command.apk"
+
+      - name: Upload verified NEXUS APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: NEXUS-Command-APK
+          path: NEXUS-Command.apk
+          if-no-files-found: error
